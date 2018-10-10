@@ -27,4 +27,20 @@ const messageBuilder = () => {
     counter++;
 };
 
+// // Messing with deleting 
+// const deleteMessage = () => {
+//     const deleteButtons = document.getElementsByClassName('deleteButton');
+//     for (let i = 0; i < deleteButtons.length; i++) {
+//         const element = deleteButtons[i];
+//         element.addEventListener('click', (e) => {
+//             console.log(e.target);
+//             // const buttonIClicked = e.target;
+//             // const messageToDelete = buttonIClicked.parentNode.parentNode;
+//             // messageToDelete.remove();
+//         })
+//     } 
+// }
+
+// deleteMessage();
+
 export {messageBuilder, messages, setMessages, getMessagez}
