@@ -14,12 +14,13 @@
     <input id="textInput" class="clearInput offset-4 mt-5"></input> 
     <button type="button" class="btn btn-light m-4">Clear Message</button>
 
-
-        <div>
-            <input type="checkbox" id="darkTheme" name="feature" value="scales" />
+    <div>
+            <input type="checkbox" class="offset-4 mt-5" id="darkTheme" name="feature" value="scales" />
             <label for="darkTheme">Dark Theme</label>
-        </div>
-    
+            <input type="checkbox" id="largeText" name="feature" value="scales" />
+            <label for="largeText">Large Text</label>
+
+    </div>
 
     <div id="messageArea"></div>
 
@@ -34,6 +35,7 @@
     <script src="./javascripts/helpers/util.js" type="module"></script>
     <script src="./javascripts/data/data.js" type="module"></script>
     <script src="./javascripts/events/eventlisteners.js" type="module"></script>
+    <script src="./javascripts/events/messages.js" type="module"></script>
     <script src="./javascripts/main.js" type="module"></script>
 </body>
 </html>
