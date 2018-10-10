@@ -1,6 +1,7 @@
 import { printToDom } from "../helpers/util.js";
 
 
+// Dark Theme Function 
 const darkTheme = () => {
     const darkCheckBox = document.getElementById('darkTheme');
     darkCheckBox.addEventListener('click', (e) => {
@@ -15,23 +16,6 @@ const darkTheme = () => {
 };
 
 darkTheme();
-
-const largeText = () => {
-    const textCheckBox = document.getElementById('largeText');
-    textCheckBox.addEventListener('click', (e) => {
-        if (textCheckBox.checked) {
-            messageArea.style.fontSize = "40px";
-        } else {
-            messageArea.style.fontSize = "25px";
-        }
-    })
-};
-
-largeText();
-
-
-
-
 
 
     console.log('event listeners script connected')
