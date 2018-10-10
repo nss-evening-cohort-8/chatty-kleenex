@@ -1,7 +1,8 @@
-import {loadData} from './data/data.js'
+import {loadMessages} from './data/data.js'
+import {messageBuilder} from './events/messages.js'
 
 const initializeApp = () => {
-    loadData();
+    loadMessages();
 };
 
 initializeApp();
