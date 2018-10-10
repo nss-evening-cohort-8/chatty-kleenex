@@ -19,5 +19,6 @@ darkTheme();
         var keyCode = e.which;
         if (keyCode == 13){
             console.log (submit.value);
+            submit.value = '';
         }
     })
