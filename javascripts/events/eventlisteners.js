@@ -24,7 +24,12 @@ window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString = `<div>${submit.value}<div>`;
+        newString += `<div>`
+        newString +=    `Default_User: `
+        newString +=    `${submit.value}`
+        newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
+        newString +=    `<button type="button" class="btn btn-primary m-2" id="deleteButton">Delete</button>`
+        newString += `<div>`;
         submit.value = '';
     }
     printToDom(newString);
