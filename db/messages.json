@@ -1,0 +1,33 @@
+{
+	"messages": [{
+			"id": "message1",
+			"user": "Tim",
+			"message": "Welcome to Chatbot!",
+			"timestamp": "time stamp"
+		},
+		{
+			"id": "message2",
+			"user": "Colin",
+			"message": "How can I help you out today?",
+			"timestamp": "time stamp"
+		},
+		{
+			"id": "message3",
+			"user": "Michelle",
+			"message": "Why are you still here?",
+			"timestamp": "time stamp"
+		},
+		{
+			"id": "message4",
+			"user": "Feven",
+			"message": "You can always ask Siri if you need to.",
+			"timestamp": "time stamp"
+		},
+		{
+			"id": "message5",
+			"user": "Chase",
+			"message": "Go away.",
+			"timestamp": "time stamp"
+		}
+	]
+}
