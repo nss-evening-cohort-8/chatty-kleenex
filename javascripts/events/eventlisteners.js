@@ -21,7 +21,6 @@ darkTheme();
         var keyCode = e.which;
         let newString = "";
         if (keyCode == 13){
-            console.log (submit.value);
             newString = submit.value;
             submit.value = '';
         }
