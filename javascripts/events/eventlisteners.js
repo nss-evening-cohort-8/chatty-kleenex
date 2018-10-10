@@ -21,10 +21,10 @@ darkTheme();
     
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
-    var keyCode = e.which;
+    const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString = submit.value;
+        newString = `<div>${submit.value}<div>`;
         submit.value = '';
     }
     printToDom(newString);
