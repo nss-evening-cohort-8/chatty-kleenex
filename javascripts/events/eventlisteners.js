@@ -1,3 +1,5 @@
+import { printToDom } from "../helpers/util.js";
+
 console.log('hi');
 
 const darkTheme = () => {
@@ -17,8 +19,10 @@ darkTheme();
     const submit = document.getElementById('textInput');
     window.addEventListener('keypress', function (e) {
         var keyCode = e.which;
+        let newString = "";
         if (keyCode == 13){
-            console.log (submit.value);
+            newString = submit.value;
             submit.value = '';
         }
+        printToDom(newString);
     })
