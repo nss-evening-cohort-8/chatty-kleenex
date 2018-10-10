@@ -1,3 +1,5 @@
+import {messageBuilder, setMessages, getMessagez} from '../events/messages.js'
+
 function executeOnError() {
     console.log("This shit doesn't work");
 }
@@ -6,12 +8,13 @@ function executeOnError() {
 
 function executeOnLoad() {
     let data = JSON.parse(this.responseText);
-    console.log("Do we see anything?");
+    setMessages(data.messages);
+    messageBuilder(getMessagez())
 }
 
 // May need to change name of this later //
 
-const loadData = () => {
+const loadMessages = () => {
     let myRequest = new XMLHttpRequest();
     myRequest.addEventListener("load", executeOnLoad);
     myRequest.addEventListener("error", executeOnError);
@@ -19,4 +22,4 @@ const loadData = () => {
     myRequest.send();
 };
 
-export {loadData};
+export {loadMessages};
