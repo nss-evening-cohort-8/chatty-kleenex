@@ -6,5 +6,8 @@ body{
     border: black solid 3px;
     margin: 10%;
     padding: 10%;
+    background-color: white;
+    max-height: 1200px;
 }
+
 
