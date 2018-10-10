@@ -14,10 +14,14 @@ const getMessagez = () => {
 const messageBuilder = () => {
     let newString = '';
     for (let i = 0; i < messages.length; i++) {
-        newString += `<p>${messages[i].user}: `
-        newString += `${messages[i].message} `
-        newString += `${messages[i].timestamp}`
-        newString += `</p>`
+        newString += `<div>`
+        newString +=    `${messages[i].user}: `
+        newString +=    `${messages[i].message} `
+        newString +=    `${messages[i].timestamp} `
+        newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
+        newString +=    `<button type="button" class="btn btn-primary m-2" id="deleteButton">Delete</button>`
+        newString += `</div>`
+
     }
     printToDom(newString, 'messageArea')
     counter++;
