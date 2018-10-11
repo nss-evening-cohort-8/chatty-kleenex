@@ -27,4 +27,17 @@ const messageBuilder = () => {
     counter++;
 };
 
+// const messageLimit = () => {
+//     const messageArea = document.getElementById('messageArea');
+//     const messageArray = messageArea.split('<div>');
+    
+//     if (messageArray.length < [20]) {
+//         return messageArea
+//     } else {
+//         const removeFirst = messageArray.shift();
+//         const newArray = removeFirst.join('<div>');
+//         return newArray;
+//     }
+// }
+
 export {messageBuilder, messages, setMessages, getMessagez}
