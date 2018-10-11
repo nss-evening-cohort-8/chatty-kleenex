@@ -1,4 +1,5 @@
 import { printToDom } from "../helpers/util.js";
+import {deleteMessage} from './messages.js';
 
 
 // Dark Theme Function 
@@ -28,11 +29,12 @@ window.addEventListener('keypress', function (e) {
         newString +=    `Default_User: `
         newString +=    `${submit.value}`
         newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
-        newString +=    `<button type="button" class="btn btn-primary m-2" id="deleteButton">Delete</button>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
         submit.value = '';
     }
     printToDom(newString);
+    deleteMessage();
 });
 
 const largeText = () => {
@@ -52,7 +54,7 @@ largeText();
 
 let clearButton = document.getElementById('clearButton');
 
-function clearBox() {
+const clearBox = () => {
     document.getElementById('messageArea').innerHTML = '';
 }
 

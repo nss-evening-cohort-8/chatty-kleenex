@@ -42,4 +42,4 @@ const deleteMessage = () => {
 }
 
 
-export {messageBuilder, messages, setMessages, getMessagez}
+export {messageBuilder, messages, setMessages, getMessagez, deleteMessage}
