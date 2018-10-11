@@ -48,3 +48,12 @@ const largeText = () => {
 };
 largeText();
 
+// Clear Button Functionality //
+
+let clearButton = document.getElementById('clearButton');
+
+function clearBox() {
+    document.getElementById('messageArea').innerHTML = '';
+}
+
+clearButton.addEventListener('click', clearBox);
