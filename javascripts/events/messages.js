@@ -19,28 +19,27 @@ const messageBuilder = () => {
         newString +=    `${messages[i].message} `
         newString +=    `${messages[i].timestamp} `
         newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
-        newString +=    `<button type="button" class="btn btn-primary m-2" id="deleteButton">Delete</button>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `</div>`
 
     }
     printToDom(newString, 'messageArea')
     counter++;
+    deleteMessage();
 };
 
-// // Messing with deleting 
-// const deleteMessage = () => {
-//     const deleteButtons = document.getElementsByClassName('deleteButton');
-//     for (let i = 0; i < deleteButtons.length; i++) {
-//         const element = deleteButtons[i];
-//         element.addEventListener('click', (e) => {
-//             console.log(e.target);
-//             // const buttonIClicked = e.target;
-//             // const messageToDelete = buttonIClicked.parentNode.parentNode;
-//             // messageToDelete.remove();
-//         })
-//     } 
-// }
+// Messing with deleting 
+const deleteMessage = () => {
+    const deleteButtons = document.getElementsByClassName('deleteMessages');
+    for (let i = 0; i < deleteButtons.length; i++) {
+        const element = deleteButtons[i];
+        element.addEventListener('click', (e) => {
+            const buttonIClicked = e.target;
+            const messageToDelete = buttonIClicked.parentNode;
+            messageToDelete.remove();
+        })
+    } 
+}
 
-// deleteMessage();
 
 export {messageBuilder, messages, setMessages, getMessagez}
