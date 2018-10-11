@@ -18,13 +18,14 @@ const messageBuilder = () => {
         newString +=    `${messages[i].user}: `
         newString +=    `${messages[i].message} `
         newString +=    `${messages[i].timestamp} `
-        newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `</div>`
 
     }
     printToDom(newString, 'messageArea')
     counter++;
+    editMessage();
     deleteMessage();
 };
 
@@ -39,6 +40,18 @@ const deleteMessage = () => {
             messageToDelete.remove();
         })
     } 
+}
+
+// Messing with editing 
+
+const editMessage = () => {
+    const editButtons = document.getElementsByClassName('editMessages');
+    for (let i = 0; i < editButtons.length; i++) {
+        const editer = editButtons[i]; 
+        editer.addEventListener('click', (e) => {
+            const messageIClicked = '';
+        })
+    }
 }
 
 
