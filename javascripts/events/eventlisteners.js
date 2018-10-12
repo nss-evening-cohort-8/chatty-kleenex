@@ -35,6 +35,7 @@ window.addEventListener('keypress', function (e) {
     }
     printToDom(newString);
     deleteMessage();
+    buttonFocus();
 });
 
 const largeText = () => {
@@ -59,3 +60,33 @@ const clearBox = () => {
 }
 
 clearButton.addEventListener('click', clearBox);
+
+
+//edit message
+
+
+
+const editM = document.getElementById('textInput');
+//focusing button onto input
+const buttonFocus = () => {
+    const editB = document.getElementsByClassName('messageDiv');
+    for (let i = 0; i < editB.length; i++) {
+        editB[i].addEventListener('click', 
+       ()=> {
+        document.getElementById('editButtons');
+        editM.focus();
+        })
+    }
+}
+
+
+// const editMessage = () => {
+//     const elementM = e.target.closest('.messageDiv').id;
+//     const currentCharacter = messages.find(x => x.id === elementM);
+//     for (let i = 0; i < elementM.length; i++) {
+
+//     }
+// }
+
+export {buttonFocus}
+

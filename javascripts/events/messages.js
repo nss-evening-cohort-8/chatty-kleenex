@@ -1,4 +1,5 @@
 import { printToDom } from '../helpers/util.js'
+import {buttonFocus} from './eventlisteners.js'
 
 let messages = [];
 let counter = 0;
@@ -26,6 +27,7 @@ const messageBuilder = () => {
     printToDom(newString, 'messageArea')
     counter++;
     deleteMessage();
+    buttonFocus();
 };
 
 // Messing with deleting 
@@ -42,26 +44,9 @@ const deleteMessage = () => {
 }
 
 
-// const messageInput = document.getElementById('textInput');
-// const editM = document.getElementsByClassName('messageDiv');
-// const editMessage = () => {
-//     for (let i = 0; i < editM.length; i++) {
-//         editM[i].messages.addEventListener('click', () => {
-//                 document.getElementById('editButton');
-//                 messageInput.focus();
-//             }
-//         )}
-//     };
-
-const editM = document.document.getElementsByClassName('messageDiv');
-const editMessage = () => {
-   for (let i = 0; i < editM.length; i++) {
-    editM.addEventListener('input',  () => {
-        const messageInput = document.getElementById('textInput').value;
-        const messageEdited = messageInput.
-    })
-   }
-}
 
 
-export { messageBuilder, messages, setMessages, getMessagez, deleteMessage, editMessage }
+
+export { messageBuilder, messages, setMessages, getMessagez, deleteMessage }
+
+
