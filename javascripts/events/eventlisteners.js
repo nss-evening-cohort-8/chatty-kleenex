@@ -19,7 +19,7 @@ darkTheme();
 
     let userName = "";
     const users = () => {
-        let userRadios =  document.getElementsByClassName("users");
+        let userRadios =  document.forms["usersForm"].elements["users"];
         console.log(userRadios)
         for (let i = 0; i<userRadios.length; i++) {
             userRadios[i].onclick = function() {
