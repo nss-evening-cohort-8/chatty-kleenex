@@ -38,8 +38,8 @@ window.addEventListener('keypress', function (e) {
     if (keyCode == 13){
         newString += `<div>`
         newString +=    `${userName}${' '}`
-        newString +=    `${submit.value}`
-        newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
+        newString +=    `<span>${submit.value}</span>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
         submit.value = '';
@@ -90,5 +90,5 @@ const editMessage = () => {
     }
 }
 
-editMessage();
+export {editMessage}
 

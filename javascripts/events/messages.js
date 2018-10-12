@@ -1,4 +1,5 @@
 import {printToDom} from '../helpers/util.js'
+import {editMessage} from './eventlisteners.js'
 
 let messages = [];
 let counter = 0;
@@ -25,7 +26,7 @@ const messageBuilder = () => {
     }
     printToDom(newString, 'messageArea')
     counter++;
-    //editMessage();
+    editMessage();
     deleteMessage();
 };
 
@@ -42,26 +43,6 @@ const deleteMessage = () => {
         })
     } 
 }
-
-// // EDIT BUTTON 
-
-// const editMessage = () => {
-//     const editButtons = document.getElementsByClassName('editMessages');
-//     for (let i = 0; i < editButtons.length; i++) {
-//         const editer = editButtons[i]; 
-//         editer.addEventListener('click', (e) => {
-//             const messageIClicked = e.target;
-//             //console.log(messageIClicked);
-//             const toDelete = messageIClicked.parentNode;
-//             const messageToEdit = messageIClicked.parentNode.childNodes[1].innerHTML;
-//             console.log(messageToEdit);
-//             submit.innerHTML = messageToEdit;
-
-//         })
-//     }
-// }
-
-// editMessage();
 
 
 export {messageBuilder, messages, setMessages, getMessagez, deleteMessage}
