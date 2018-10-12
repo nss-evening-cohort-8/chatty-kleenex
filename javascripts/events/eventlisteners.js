@@ -69,15 +69,10 @@ const editMessage = () => {
         const editer = editButtons[i]; 
         editer.addEventListener('click', (e) => {
             const messageIClicked = e.target;
-            console.log(messageIClicked);
             const toDelete = messageIClicked.parentNode;
-            console.log(toDelete);
-
             const messageToEdit = messageIClicked.parentNode.childNodes[1];
-            console.log(messageToEdit);
             submit.value = messageToEdit.innerHTML;
             toDelete.remove();
-
         })
     }
 }
