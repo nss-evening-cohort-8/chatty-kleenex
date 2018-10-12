@@ -19,6 +19,18 @@ darkTheme();
 
 
     console.log('event listeners script connected')
+
+    const radioButton = () => {
+        let user1 = document.getElementById("tim");
+        let user = document.getElementById("tim").getAttribute("id");
+        user1.addEventListener('click', () => {
+            let userName = '';
+        if(user === "tim"){
+        userName = user;
+        }
+        return userName;
+        })
+        }
     
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
@@ -26,7 +38,8 @@ window.addEventListener('keypress', function (e) {
     let newString = "";
     if (keyCode == 13){
         newString += `<div>`
-        newString +=    `Default_User: `
+        // newString +=    `Default_User: `
+        newString +=    `${radioButton()} `
         newString +=    `${submit.value}`
         newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
