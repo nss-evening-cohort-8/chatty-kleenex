@@ -1,5 +1,5 @@
 import { printToDom } from '../helpers/util.js'
-import {buttonFocus} from './eventlisteners.js'
+import {buttonFocus, buttonEdit} from './eventlisteners.js'
 
 let messages = [];
 let counter = 0;
@@ -28,6 +28,7 @@ const messageBuilder = () => {
     counter++;
     deleteMessage();
     buttonFocus();
+    buttonEdit();
 };
 
 // Messing with deleting 
