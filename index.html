@@ -1,49 +1,94 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kleenex</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+
+<body id="bodyId">
 
     
+
     <div id="logo"></div>
-    <input id="textInput" class="clearInput offset-4 mt-5"></input> 
-    <button type="button" class="btn btn-light m-4" id="clearButton">Clear Message</button>
-
+    <input id="textInput" class="clearInput offset-4 mt-5">
+    <button type="button" class="btn btn-light m-4" id="clearButton">Clear Message</button> 
+    
     <div>
-            <input type="checkbox" class="offset-4 mt-5" id="darkTheme" name="feature" value="scales" />
-            <label for="darkTheme">Dark Theme</label>
-            <input type="checkbox" id="largeText" name="feature" value="scales" />
-            <label for="largeText">Large Text</label>
-
+        <input type="checkbox" class="offset-4 mt-5" id="darkTheme" name="feature" value="scales" />
+        <label for="darkTheme">Dark Theme</label>
+        <input type="checkbox" id="largeText" name="feature" value="scales" />
+        <label for="largeText">Large Text</label>
+        <input type="checkbox" class="modalButtHead btn btn-primary" data-toggle="modal" data-target="#exampleModal" />
+        <label for="customTheme">Extra Themes</label>
     </div>
+
+    
 <div id="container">
     <div id="messageArea"></div>
     <div id="radioButtons">
 
         <form name="usersForm">
-      <input id="chase" class="users" type="radio" name="users" value="Chase"> Chase</br>
-       <input id="colin" class="users" type="radio" name="users" value="Colin"> Colin</br>
-        <input id="michelle" class="users" type="radio" name="users" value="Michelle"> Michelle</br>
-        <input id="feven" class="users" type="radio" name="users" value="Feven"> Feven</br>
-        <input id="tim"class="users" type="radio" name="users" value="Tim"> Tim</br>
+      <input id="chase" class="users" type="radio" name="users" value="Chase:"> Chase</br>
+       <input id="colin" class="users" type="radio" name="users" value="Colin:"> Colin</br>
+        <input id="michelle" class="users" type="radio" name="users" value="Michelle:"> Michelle</br>
+        <input id="feven" class="users" type="radio" name="users" value="Feven:"> Feven</br>
+        <input id="tim"class="users" type="radio" name="users" value="Tim:"> Tim</br>
 
     </form>
+
     </div>
-</div>
 
 
-    
+   <!-- Button trigger modal -->
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pick A Theme:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <label class="container">Theme 1
+                        <input type="checkbox" id="themeGreen">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Theme 2
+                        <input type="checkbox" id="themePurps">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Theme 3
+                        <input type="checkbox" id="themeBlack">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Theme 4
+                            <input type="checkbox" id="themeWoo">
+                            <span class="checkmark"></span>
+                        </label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="./javascripts/helpers/util.js" type="module"></script>
     <script src="./javascripts/data/data.js" type="module"></script>
     <script src="./javascripts/events/eventlisteners.js" type="module"></script>
@@ -52,4 +97,5 @@
     <script src="https://unpkg.com/moment"></script>
     <script src="./javascripts/main.js" type="module"></script>
 </body>
+
 </html>
