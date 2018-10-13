@@ -57,23 +57,21 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <form name="radioForm">
             <div class="modal-body">
-                    <label class="container">Theme 1
-                        <input type="checkbox" id="themeGreen">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Theme 2
-                        <input type="checkbox" id="themePurps">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Theme 3
-                        <input type="checkbox" id="themeBlack">
-                        <span class="checkmark"></span>
-                    </label>
+                        <input type="radio" name="boop" id="themeGreen"> 
+                        <label for="theme1choice">Spider-Man</label>
+
+                        <input type="radio" name="boop" id="themePurps">
+                        <label for="theme2choice">Goldfishy</label>
+
+                        <input type="radio" name="boop" id="themeBlack"> 
+                        <label for="theme3choice">Space</label>
             </div>
+        </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" id="saveButton" class="btn btn-primary" data-dismiss="modal">Save changes</button>
             </div>
           </div>
         </div>
@@ -87,7 +85,7 @@
         crossorigin="anonymous"></script>
     <script src="./javascripts/helpers/util.js" type="module"></script>
     <script src="./javascripts/data/data.js" type="module"></script>
-    <script src="./javascripts/badWords/data.js" type="module"></script>
+    <script src="./javascripts/data/dataBadWords.js" type="module"></script>
     <script src="./javascripts/events/eventlisteners.js" type="module"></script>
     <script src="./javascripts/events/messages.js" type="module"></script>
     <script src="./javascripts/events/moment.js" type="module"></script>
