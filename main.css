@@ -17,18 +17,6 @@ body{
     flex-wrap: wrap;
 }
 
-.theme1 {
-    background-color: lightgreen;
-}
-
-.theme2 {
-    background-color: plum;
-}
-
-.theme3 {
-    background-color: black;
-}
-
 .themeBackgroundSpace {
     background-image: url(./images/Galaxy.jpg);
 }
