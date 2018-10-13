@@ -1,6 +1,5 @@
 body{
     background-color: lightskyblue;
-    
 }
 
 #messageArea {
@@ -28,3 +27,10 @@ body{
 .themeBackgroundSpider {
     background-image: url(./images/Spidey.jpg);
 }
+
+/* #logo {
+    display: flex;
+    margin-top: 14%;
+    margin-left: 14%;
+
+} */
