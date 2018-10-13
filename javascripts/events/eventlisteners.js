@@ -17,17 +17,17 @@ const darkTheme = () => {
 };
 darkTheme();
 
-    let userName = "";
-    const users = () => {
-        let userRadios =  document.getElementsByClassName("users");
-        for (let i = 0; i<userRadios.length; i++) {
-            userRadios[i].onclick = function() {
-                userName = userRadios[i].value;
-                return userName;
-                            } 
-            }
+let userName = "";
+const users = () => {
+    let userRadios =  document.getElementsByClassName("users");
+    for (let i = 0; i<userRadios.length; i++) {
+        userRadios[i].onclick = function() {
+            userName = userRadios[i].value;
+            return userName;
+            } 
         }
-        users();
+    }
+users();
 
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
@@ -46,6 +46,7 @@ window.addEventListener('keypress', function (e) {
     deleteMessage();
     messageLimit();
     editMessage();
+    clearFix();
 });
 
 
@@ -69,8 +70,11 @@ let clearButton = document.getElementById('clearButton');
 
 const clearBox = () => {
     document.getElementById('messageArea').innerHTML = '';
+    clearButton.disabled = true;
 }
-
+const clearFix = () => {
+    clearButton.disabled = false;
+}
 clearButton.addEventListener('click', clearBox);
 
 // EDIT BUTTON 
@@ -89,5 +93,5 @@ const editMessage = () => {
     }
 }
 
-export {editMessage}
+export {editMessage, clearFix}
 
