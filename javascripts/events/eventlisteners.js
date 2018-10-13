@@ -114,7 +114,7 @@ const lilSpaceTheme = () => {
             document.getElementById('bodyId').classList.add('themeBackgroundSpace');
         } else {
             document.getElementById('bodyId').classList.remove('theme3');
-            document.getElementById('bodyId').classList.add('themeBackgroundSpace');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
         }
     })
 }
