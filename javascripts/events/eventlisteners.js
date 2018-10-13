@@ -83,7 +83,6 @@ const lilGreenTheme = () => {
     const greenThemeBox = document.getElementById('themeGreen');
     greenThemeBox.addEventListener('click', () => {
         if (greenThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme1');
             document.getElementById('bodyId').classList.add('themeBackgroundSpider');
             document.getElementById('bodyId').classList.remove('themeBackgroundFish');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
@@ -99,7 +98,6 @@ const lilPurpsTheme = () => {
     const purpleThemeBox = document.getElementById('themePurps');
     purpleThemeBox.addEventListener('click', () => {
         if (purpleThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme2');
             document.getElementById('bodyId').classList.add('themeBackgroundFish');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
@@ -115,7 +113,6 @@ const lilSpaceTheme = () => {
     const spaceThemeBox = document.getElementById('themeBlack');
     spaceThemeBox.addEventListener('click', () => {
         if (spaceThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme3');
             document.getElementById('bodyId').classList.add('themeBackgroundSpace');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
             document.getElementById('bodyId').classList.remove('themeBackgroundFish');
