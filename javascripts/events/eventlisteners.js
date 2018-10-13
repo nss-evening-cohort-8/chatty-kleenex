@@ -47,6 +47,7 @@ window.addEventListener('keypress', function (e) {
     printToDom(newString);
     deleteMessage();
     editMessage();
+    messageLimit();
     clearFix();
 });
 
