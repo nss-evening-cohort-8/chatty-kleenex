@@ -44,13 +44,11 @@ const deleteMessage = () => {
 const messageLimit = () => {
     const allMessages = document.getElementsByClassName('message')
     
-    if (allMessages.length < [20]) {
+    if (allMessages.length <= [20]) {
         console.log('This is less than 20')
     } else {
-        // const removeFirst = messageArray.shift();
-        // const newArray = removeFirst.join('<div>');
-        // return newArray;
-        console.log('This is more than 20')
+        const remove = allMessages.shift();
+        console.log(remove)
     }
 }
 
