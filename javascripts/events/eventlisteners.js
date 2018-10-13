@@ -27,8 +27,6 @@ darkTheme();
                             } 
             }
         }
-    }
-}
 users();
 
 
@@ -80,6 +78,9 @@ const lilGreenTheme = () => {
     greenThemeBox.addEventListener('click', () => {
         if (greenThemeBox.checked) {
             document.getElementById('bodyId').classList.add('theme1');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpider');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme1');
         }
     })
 }
@@ -89,13 +90,27 @@ const lilPurpsTheme = () => {
     const purpleThemeBox = document.getElementById('themePurps');
     purpleThemeBox.addEventListener('click', () => {
         if (purpleThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme2')
+            document.getElementById('bodyId').classList.add('theme2');
+            document.getElementById('bodyId').classList.add('themeBackgroundFish');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme2');
         }
     })
 }
+lilPurpsTheme();
 
-
-
+const lilSpaceTheme = () => {
+    const spaceThemeBox = document.getElementById('themeBlack');
+    spaceThemeBox.addEventListener('click', () => {
+        if (spaceThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme3');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpace');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme3');
+        }
+    })
+}
+lilSpaceTheme();
 
 // EDIT BUTTON 
 

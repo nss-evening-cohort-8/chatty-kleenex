@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="spacetheme.css">
 </head>
 
 <body id="bodyId">
@@ -15,7 +16,7 @@
     
 
     <div id="logo"></div>
-    <input id="textInput" class="clearInput offset-4 mt-5" contenteditable="true">
+    <input id="textInput" class="clearInput offset-4 mt-5">
     <button type="button" class="btn btn-light m-4" id="clearButton">Clear Message</button> 
     
     <div>
@@ -24,7 +25,7 @@
         <input type="checkbox" id="largeText" name="feature" value="scales" />
         <label for="largeText">Large Text</label>
         <input type="checkbox" class="modalButtHead btn btn-primary" data-toggle="modal" data-target="#exampleModal" />
-        <label for="customeTheme">Custom Themes</label>
+        <label for="customTheme">Extra Themes</label>
     </div>
 
     
@@ -56,19 +57,23 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body" id="themessss">
+            <div class="modal-body">
                     <label class="container">Theme 1
                         <input type="checkbox" id="themeGreen">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">Theme 2
-                        <input type="checkbox">
+                        <input type="checkbox" id="themePurps">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">Theme 3
-                        <input type="checkbox">
+                        <input type="checkbox" id="themeBlack">
                         <span class="checkmark"></span>
                     </label>
+                    <label class="container">Theme 4
+                            <input type="checkbox" id="themeWoo">
+                            <span class="checkmark"></span>
+                        </label>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

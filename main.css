@@ -17,6 +17,25 @@ body{
 }
 
 .theme1 {
-    background-color: green;
+    background-color: lightgreen;
 }
 
+.theme2 {
+    background-color: plum;
+}
+
+.theme3 {
+    background-color: black;
+}
+
+.themeBackgroundSpace {
+    background-image: url(./images/Galaxy.jpg);
+}
+
+.themeBackgroundFish {
+    background-image: url(./images/Goldfish.jpg);
+}
+
+.themeBackgroundSpider {
+    background-image: url(./images/Spidey.jpg);
+}
