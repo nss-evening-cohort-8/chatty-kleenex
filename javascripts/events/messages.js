@@ -1,6 +1,5 @@
 import {printToDom} from '../helpers/util.js'
 import {editMessage} from './eventlisteners.js'
-import {rightNow} from './moment.js'
 
 let messages = [];
 let counter = 0;
