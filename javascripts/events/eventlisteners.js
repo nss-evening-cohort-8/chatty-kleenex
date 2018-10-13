@@ -17,6 +17,7 @@ const darkTheme = () => {
 };
 darkTheme();
 
+
 let userName = "";
 const users = () => {
     let userRadios =  document.getElementsByClassName("users");
@@ -48,8 +49,6 @@ window.addEventListener('keypress', function (e) {
     editMessage();
     clearFix();
 });
-
-
 
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
