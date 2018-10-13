@@ -1,5 +1,9 @@
 import { printToDom } from "../helpers/util.js";
+<<<<<<< HEAD
 import { deleteMessage, messageBuilder } from './messages.js';
+=======
+import {deleteMessage, messageLimit} from './messages.js';
+>>>>>>> master
 
 
 // Dark Theme Function 
@@ -17,6 +21,7 @@ const darkTheme = () => {
 };
 darkTheme();
 
+<<<<<<< HEAD
 let userName = "";
 const users = () => {
     let userRadios = document.getElementsByClassName("users");
@@ -26,6 +31,17 @@ const users = () => {
             userName = userRadios[i].value;
             console.log(userName)
             return userName;
+=======
+    let userName = "";
+    const users = () => {
+        let userRadios =  document.getElementsByClassName("users");
+        for (let i = 0; i<userRadios.length; i++) {
+            userRadios[i].onclick = function() {
+                userName = userRadios[i].value;
+                return userName;
+                            } 
+            }
+>>>>>>> master
         }
     }
 }
@@ -36,17 +52,27 @@ const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
+<<<<<<< HEAD
     if (keyCode == 13) {
         newString += `<div>`
         newString += `${userName}${' '}`
         newString += `<span>${submit.value}</span>`
         newString += `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString += `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
+=======
+    if (keyCode == 13){
+        newString += `<div class='message'>`
+        newString +=    `${userName}${' '}`
+        newString +=    `<span>${submit.value}</span>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
+>>>>>>> master
         newString += `<div>`;
         submit.value = '';
     }
     printToDom(newString);
     deleteMessage();
+    messageLimit();
     editMessage();
 });
 
