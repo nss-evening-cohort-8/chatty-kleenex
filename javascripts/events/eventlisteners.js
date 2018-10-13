@@ -106,6 +106,8 @@ const lilPurpsTheme = () => {
     })
 }
 
+lilPurpsTheme();
+
 const lilSpaceTheme = () => {
     const spaceThemeBox = document.getElementById('themeBlack');
     spaceThemeBox.addEventListener('click', () => {
