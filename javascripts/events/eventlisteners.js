@@ -17,15 +17,15 @@ const darkTheme = () => {
 };
 darkTheme();
 
-let userName = "";
-const users = () => {
-    let userRadios = document.getElementsByClassName("users");
-    console.log(userRadios)
-    for (let i = 0; i < userRadios.length; i++) {
-        userRadios[i].onclick = function () {
-            userName = userRadios[i].value;
-            console.log(userName)
-            return userName;
+    let userName = "";
+    const users = () => {
+        let userRadios =  document.forms["usersForm"].elements["users"];
+        for (let i = 0; i<userRadios.length; i++) {
+            userRadios[i].onclick = function() {
+                userName = userRadios[i].value;
+                return userName;
+                            } 
+            }
         }
     }
 }
@@ -49,8 +49,6 @@ window.addEventListener('keypress', function (e) {
     deleteMessage();
     editMessage();
 });
-
-
 
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
