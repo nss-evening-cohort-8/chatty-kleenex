@@ -1,5 +1,6 @@
 import {printToDom} from '../helpers/util.js'
 import {editMessage} from './eventlisteners.js'
+import {rightNow} from './moment.js'
 
 let messages = [];
 let counter = 0;
@@ -18,7 +19,7 @@ const messageBuilder = () => {
         newString += `<div>`
         newString +=    `${messages[i].user}: `
         newString +=    `<span>${messages[i].message}</span> `
-        newString +=    `${messages[i].timestamp} `
+        newString +=    `<font size="1">${messages[i].timestamp}</font> `
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `</div>`

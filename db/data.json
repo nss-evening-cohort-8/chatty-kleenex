@@ -3,31 +3,31 @@
 			"id": "message1",
 			"user": "Tim",
 			"message": "Welcome to Chatbot!",
-			"timestamp": "time stamp"
+			"timestamp": "2016-11-23 8:23:12 pm"
 		},
 		{
 			"id": "message2",
 			"user": "Colin",
 			"message": "How can I help you out today?",
-			"timestamp": "time stamp"
+			"timestamp": "2018-7-19 12:06:56 am"
 		},
 		{
 			"id": "message3",
 			"user": "Michelle",
 			"message": "Why are you still here?",
-			"timestamp": "time stamp"
+			"timestamp": "2018-2-3 4:35:29 am"
 		},
 		{
 			"id": "message4",
 			"user": "Feven",
 			"message": "You can always ask Siri if you need to.",
-			"timestamp": "time stamp"
+			"timestamp": "2007-15-8 8:10:10 pm"
 		},
 		{
 			"id": "message5",
 			"user": "Chase",
 			"message": "Go away.",
-			"timestamp": "time stamp"
+			"timestamp": "2001-9-28 5:55:55 pm"
 		}
 	]
 }
