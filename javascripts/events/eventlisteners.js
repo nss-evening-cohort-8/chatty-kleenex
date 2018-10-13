@@ -1,6 +1,6 @@
 import { printToDom } from "../helpers/util.js";
+import {deleteMessage} from './messages.js';
 import {rightNow} from './moment.js';
-import {deleteMessage, messageLimit} from './messages.js';
 
 // Dark Theme Function 
 const darkTheme = () => {
@@ -17,25 +17,26 @@ const darkTheme = () => {
 };
 darkTheme();
 
-
-let userName = "";
-const users = () => {
-    let userRadios =  document.getElementsByClassName("users");
-    for (let i = 0; i<userRadios.length; i++) {
-        userRadios[i].onclick = function() {
-            userName = userRadios[i].value;
-            return userName;
-            } 
+    let userName = "";
+    const users = () => {
+        let userRadios =  document.getElementsByClassName("users");
+        console.log(userRadios)
+        for (let i = 0; i<userRadios.length; i++) {
+            userRadios[i].onclick = function() {
+                userName = userRadios[i].value;
+                console.log(userName)
+                return userName;
+                            } 
+            }
         }
-    }
-users();
+        users();
 
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString += `<div class='message'>`
+        newString += `<div>`
         newString +=    `${userName}${' '}`
         newString +=    `<span>${submit.value}</span>`
         newString +=    `<span><font size="1">  ${rightNow()}</font></span>`
@@ -54,12 +55,12 @@ window.addEventListener('keypress', function (e) {
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
     makeTextLarge.addEventListener('click', () => {
-        if (makeTextLarge.checked) {
-            messageArea.style.fontSize = "2.0em";
-        }
-        else {
-            messageArea.style.fontSize = "1.0em";
-        }
+    if(makeTextLarge.checked){
+        messageArea.style.fontSize = "2.0em";  
+    }
+    else{
+        messageArea.style.fontSize = "1.0em";
+    }
     })
 };
 largeText();
@@ -104,7 +105,6 @@ const lilPurpsTheme = () => {
         }
     })
 }
-lilPurpsTheme();
 
 const lilSpaceTheme = () => {
     const spaceThemeBox = document.getElementById('themeBlack');
@@ -129,7 +129,7 @@ const uncheckBoxes = (obj) => {
 const editMessage = () => {
     const editButtons = document.getElementsByClassName('editMessages');
     for (let i = 0; i < editButtons.length; i++) {
-        const editer = editButtons[i];
+        const editer = editButtons[i]; 
         editer.addEventListener('click', (e) => {
             const messageIClicked = e.target;
             const toDelete = messageIClicked.parentNode;
@@ -140,5 +140,5 @@ const editMessage = () => {
     }
 }
 
-export {editMessage, clearFix}
+export {editMessage}
 
