@@ -1,5 +1,5 @@
 import { printToDom } from "../helpers/util.js";
-import {deleteMessage} from './messages.js';
+import {deleteMessage, messageLimit} from './messages.js';
 import {rightNow} from './moment.js';
 
 // Dark Theme Function 
@@ -106,6 +106,8 @@ const lilPurpsTheme = () => {
     })
 }
 
+lilPurpsTheme();
+
 const lilSpaceTheme = () => {
     const spaceThemeBox = document.getElementById('themeBlack');
     spaceThemeBox.addEventListener('click', () => {
@@ -136,5 +138,5 @@ const editMessage = () => {
     }
 }
 
-export {editMessage}
+export {editMessage, clearFix}
 
