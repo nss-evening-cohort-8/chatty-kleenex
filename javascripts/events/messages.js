@@ -61,5 +61,6 @@ const messageLimit = () => {
     };
 }
 
+console.log('hello world');
 
 export {messageBuilder, messages, setMessages, getMessagez, deleteMessage, messageLimit}
