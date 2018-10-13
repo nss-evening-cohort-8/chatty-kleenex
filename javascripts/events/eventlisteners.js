@@ -53,7 +53,7 @@ window.addEventListener('keypress', function (e) {
         }
     }
     printToDom(newString);
-    deleteMessage();
+  deleteMessage();
 });
 
 }
