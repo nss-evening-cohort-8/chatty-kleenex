@@ -1,6 +1,6 @@
 import { printToDom } from "../helpers/util.js";
 import {deleteMessage, messageLimit} from './messages.js';
-
+import {rightNow} from './moment.js';
 
 let words = [];
 
@@ -30,10 +30,12 @@ darkTheme();
 
     let userName = "";
     const users = () => {
-        let userRadios =  document.forms["usersForm"].elements["users"];
+        let userRadios =  document.getElementsByClassName("users");
+        console.log(userRadios)
         for (let i = 0; i<userRadios.length; i++) {
             userRadios[i].onclick = function() {
                 userName = userRadios[i].value;
+                console.log(userName)
                 return userName;
                             } 
             }
@@ -46,9 +48,10 @@ window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString += `<div class='message'>`
+        newString += `<div>`
         newString +=    `${userName}${' '}`
         newString +=    `<span>${submit.value}</span>`
+        newString +=    `<span><font size="1">  ${rightNow()}</font></span>`
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
@@ -57,8 +60,9 @@ window.addEventListener('keypress', function (e) {
     }
     printToDom(newString);
     deleteMessage();
-    messageLimit();
     editMessage();
+    messageLimit();
+    clearFix();
 });
 } 
 userMessage();
@@ -90,13 +94,60 @@ largeText();
 
 // Clear Button Functionality //
 
-let clearButton = document.getElementById('clearButton');
-
 const clearBox = () => {
+    let clearButton = document.getElementById('clearButton');
     document.getElementById('messageArea').innerHTML = '';
+    clearButton.disabled = true;
+}
+const clearFix = () => {
+    clearButton.disabled = false;
+}
+clearButton.addEventListener('click', clearBox);
+
+
+//MODAL THEMES
+const lilGreenTheme = () => {
+    const greenThemeBox = document.getElementById('themeGreen');
+    greenThemeBox.addEventListener('click', () => {
+        if (greenThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme1');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpider');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme1');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
+        }
+    })
+}
+lilGreenTheme();
+
+const lilPurpsTheme = () => {
+    const purpleThemeBox = document.getElementById('themePurps');
+    purpleThemeBox.addEventListener('click', () => {
+        if (purpleThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme2');
+            document.getElementById('bodyId').classList.add('themeBackgroundFish');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme2');
+            document.getElementById('bodyId').classList.remove('themeBackgroundFish');
+        }
+    })
 }
 
-clearButton.addEventListener('click', clearBox);
+lilPurpsTheme();
+
+const lilSpaceTheme = () => {
+    const spaceThemeBox = document.getElementById('themeBlack');
+    spaceThemeBox.addEventListener('click', () => {
+        if (spaceThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme3');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpace');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme3');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
+        }
+    })
+}
+lilSpaceTheme();
 
 // EDIT BUTTON 
 
@@ -113,6 +164,9 @@ const editMessage = () => {
         })
     }
 }
+
  
-export {editMessage,setMessages,getMessagez,badWords}
+export {editMessage,setMessages,getMessagez,badWords,clearFix}
+
+
 
