@@ -1,5 +1,5 @@
 import { printToDom } from "../helpers/util.js";
-import {deleteMessage} from './messages.js';
+import {deleteMessage, messageLimit} from './messages.js';
 
 
 // Dark Theme Function 
@@ -20,11 +20,9 @@ darkTheme();
     let userName = "";
     const users = () => {
         let userRadios =  document.forms["usersForm"].elements["users"];
-        console.log(userRadios)
         for (let i = 0; i<userRadios.length; i++) {
             userRadios[i].onclick = function() {
                 userName = userRadios[i].value;
-                console.log(userName)
                 return userName;
                             } 
             }
@@ -36,16 +34,18 @@ window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString += `<div>`
+        newString += `<div class='message'>`
         newString +=    `${userName}${' '}`
-        newString +=    `${submit.value}`
-        newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
+        newString +=    `<span>${submit.value}</span>`
+        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
         submit.value = '';
     }
     printToDom(newString);
     deleteMessage();
+    messageLimit();
+    editMessage();
 });
 
 const largeText = () => {
@@ -70,3 +70,22 @@ const clearBox = () => {
 }
 
 clearButton.addEventListener('click', clearBox);
+
+// EDIT BUTTON 
+
+const editMessage = () => {
+    const editButtons = document.getElementsByClassName('editMessages');
+    for (let i = 0; i < editButtons.length; i++) {
+        const editer = editButtons[i]; 
+        editer.addEventListener('click', (e) => {
+            const messageIClicked = e.target;
+            const toDelete = messageIClicked.parentNode;
+            const messageToEdit = messageIClicked.parentNode.childNodes[1];
+            submit.value = messageToEdit.innerHTML;
+            toDelete.remove();
+        })
+    }
+}
+
+export {editMessage}
+
