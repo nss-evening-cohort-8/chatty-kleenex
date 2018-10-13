@@ -47,8 +47,6 @@ window.addEventListener('keypress', function (e) {
     }
     printToDom(newString);
     deleteMessage();
-    buttonFocus();
-    buttonEdit();
 });
 
 
@@ -76,40 +74,14 @@ const clearBox = () => {
 
 clearButton.addEventListener('click', clearBox);
 
+//modal themes
+let whut = document.getElementById('themessss');
+let firstTheme = document.getElementById('theme1');
 
-//edit message
-
-
-
-const buttonFocus = () => {
-    const editM = document.getElementById('textInput');
-    const editB = document.getElementsByClassName('messageDiv');
-    for (let i = 0; i < editB.length; i++) {
-        editB[i].addEventListener('click', () => {
-            document.getElementById('editButtons');
-            editM.focus();
-        })
+const chooseTheme = () => {
+    if (theme1.checked === true) {
+        whut.className = 'theme1';
     }
 }
 
-let messageIClicked;
-
-let buttonEdit = () => {
-    const editButtons = document.getElementsByClassName("messageDiv");
-    for (let i = 0; i < editButtons.length; i++) {
-        editButtons[i].addEventListener('click', (e) => {
-            messageIClicked = e.currentTarget.parentNode;
-        })
-    }
-};
-
-// const changeMessage = () => {
-//     input.addEventListener('keyup', (e) => {
-//         if (e.keyCode === 13) {
-//             messageIClicked.childNodes[2].innerHTML = input.value
-//         }
-//     }
-// )}
-
-export {buttonEdit, buttonFocus}
-
+firstTheme.addEventListener('click', chooseTheme);
