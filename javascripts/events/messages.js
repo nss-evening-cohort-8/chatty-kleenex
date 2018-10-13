@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import { printToDom } from '../helpers/util.js'
-
-=======
 import {printToDom} from '../helpers/util.js'
 import {editMessage} from './eventlisteners.js'
->>>>>>> master
 
 let messages = [];
 let counter = 0;
@@ -20,21 +15,12 @@ const getMessagez = () => {
 const messageBuilder = () => {
     let newString = '';
     for (let i = 0; i < messages.length; i++) {
-<<<<<<< HEAD
-        newString += `<div class="messageDiv">`
-        newString += `${messages[i].user}: `
-        newString += `${messages[i].message} `
-        newString += `${messages[i].timestamp} `
-        newString += `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
-        newString += `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
-=======
         newString += `<div>`
         newString +=    `${messages[i].user}: `
         newString +=    `<span>${messages[i].message}</span> `
         newString +=    `${messages[i].timestamp} `
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
->>>>>>> master
         newString += `</div>`
 
     }

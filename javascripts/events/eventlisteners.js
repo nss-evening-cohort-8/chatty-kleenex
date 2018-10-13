@@ -17,31 +17,31 @@ const darkTheme = () => {
 };
 darkTheme();
 
-    let userName = "";
-    const users = () => {
-        let userRadios =  document.getElementsByClassName("users");
-        console.log(userRadios)
-        for (let i = 0; i<userRadios.length; i++) {
-            userRadios[i].onclick = function() {
-                userName = userRadios[i].value;
-                console.log(userName)
-                return userName;
-                            } 
-            }
+let userName = "";
+const users = () => {
+    let userRadios = document.getElementsByClassName("users");
+    console.log(userRadios)
+    for (let i = 0; i < userRadios.length; i++) {
+        userRadios[i].onclick = function () {
+            userName = userRadios[i].value;
+            console.log(userName)
+            return userName;
         }
-        users();
+    }
+}
+users();
 
 
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
-    if (keyCode == 13){
+    if (keyCode == 13) {
         newString += `<div>`
-        newString +=    `${userName}${' '}`
-        newString +=    `<span>${submit.value}</span>`
-        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
-        newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
+        newString += `${userName}${' '}`
+        newString += `<span>${submit.value}</span>`
+        newString += `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
+        newString += `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
         submit.value = '';
     }
@@ -75,25 +75,35 @@ const clearBox = () => {
 
 clearButton.addEventListener('click', clearBox);
 
-<<<<<<< HEAD
+
 //modal themes
-let whut = document.getElementById('themessss');
-let firstTheme = document.getElementById('theme1');
+// let whut = document.getElementById('themessss');
+// let pageBody = document.getElementById("bodyId");
+// let firstTheme = document.getElementById('themeGreen') ;
 
-const chooseTheme = () => {
-    if (theme1.checked === true) {
-        whut.className = 'theme1';
-    }
-}
 
-firstTheme.addEventListener('click', chooseTheme);
-=======
+
+
+// const chooseTheme = () => {
+//     const greenCheckBox = document.getElementById('themeGreen');
+//     greenCheckBox.addEventListener('click', (e) => {
+//         if (greenCheckBox.checked) {
+//             bodyId.style.backgroundColor = "green";
+//             bodyId.style.color = "white";
+//         } else {
+//             bodyId.style.backgroundColor = "white";
+//             bodyId.style.color = "black";
+//         }
+//     })
+// };
+// chooseTheme();
+
 // EDIT BUTTON 
 
 const editMessage = () => {
     const editButtons = document.getElementsByClassName('editMessages');
     for (let i = 0; i < editButtons.length; i++) {
-        const editer = editButtons[i]; 
+        const editer = editButtons[i];
         editer.addEventListener('click', (e) => {
             const messageIClicked = e.target;
             const toDelete = messageIClicked.parentNode;
@@ -104,6 +114,15 @@ const editMessage = () => {
     }
 }
 
-export {editMessage}
+export { editMessage }
 
->>>>>>> master
+const chooseTheme = () => {
+    const greenThemeBox = document.getElementById('themeGreen');
+    greenThemeBox.addEventListener('click', () => {
+        if (greenThemeBox.checked) {
+            console.log('break?');
+            document.getElementById('bodyId').classList.add('theme1');
+        }
+    })
+}
+chooseTheme();
