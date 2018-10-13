@@ -19,7 +19,7 @@ darkTheme();
 
     let userName = "";
     const users = () => {
-        let userRadios =  document.getElementsByClassName("users");
+        let userRadios =  document.forms["usersForm"].elements["users"];
         for (let i = 0; i<userRadios.length; i++) {
             userRadios[i].onclick = function() {
                 userName = userRadios[i].value;
@@ -47,8 +47,6 @@ window.addEventListener('keypress', function (e) {
     messageLimit();
     editMessage();
 });
-
-
 
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
