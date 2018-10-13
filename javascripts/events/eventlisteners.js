@@ -2,6 +2,17 @@ import { printToDom } from "../helpers/util.js";
 import {deleteMessage, messageLimit} from './messages.js';
 
 
+let words = [];
+
+const setMessages = (newArray) => {
+    words = newArray;
+};
+
+const getMessagez = () => {
+    return words;
+}
+
+
 // Dark Theme Function 
 const darkTheme = () => {
     const darkCheckBox = document.getElementById('darkTheme');
@@ -29,7 +40,8 @@ darkTheme();
         }
         users();
 
-const submit = document.getElementById('textInput');
+let submit = document.getElementById('textInput');        
+const userMessage = () => {
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
@@ -40,6 +52,7 @@ window.addEventListener('keypress', function (e) {
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
+        badWords();
         submit.value = '';
     }
     printToDom(newString);
@@ -47,6 +60,20 @@ window.addEventListener('keypress', function (e) {
     messageLimit();
     editMessage();
 });
+} 
+userMessage();
+
+// BAD WORDS
+const badWords = () => {
+const message = submit.value;
+console.log(message);
+for (let i = 0; i < words.length; i++) {
+    if(message.includes(words[i])){
+        const alertWord = words[i];
+        alert("You typed " + alertWord + " so you are rewarded with a prize");
+    }
+}
+}
 
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
@@ -86,6 +113,6 @@ const editMessage = () => {
         })
     }
 }
-
-export {editMessage}
+ 
+export {editMessage,setMessages,getMessagez,badWords}
 
