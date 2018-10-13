@@ -51,13 +51,4 @@ const messageLimit = () => {
 }
 
 
-<<<<<<< HEAD
-
-
-
-export { messageBuilder, messages, setMessages, getMessagez, deleteMessage }
-
-
-=======
 export {messageBuilder, messages, setMessages, getMessagez, deleteMessage, messageLimit}
->>>>>>> master

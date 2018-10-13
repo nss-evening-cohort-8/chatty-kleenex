@@ -1,9 +1,5 @@
 import { printToDom } from "../helpers/util.js";
-<<<<<<< HEAD
 import { deleteMessage, messageBuilder } from './messages.js';
-=======
-import {deleteMessage, messageLimit} from './messages.js';
->>>>>>> master
 
 
 // Dark Theme Function 
@@ -21,7 +17,6 @@ const darkTheme = () => {
 };
 darkTheme();
 
-<<<<<<< HEAD
 let userName = "";
 const users = () => {
     let userRadios = document.getElementsByClassName("users");
@@ -31,17 +26,6 @@ const users = () => {
             userName = userRadios[i].value;
             console.log(userName)
             return userName;
-=======
-    let userName = "";
-    const users = () => {
-        let userRadios =  document.getElementsByClassName("users");
-        for (let i = 0; i<userRadios.length; i++) {
-            userRadios[i].onclick = function() {
-                userName = userRadios[i].value;
-                return userName;
-                            } 
-            }
->>>>>>> master
         }
     }
 }
@@ -52,27 +36,17 @@ const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
-<<<<<<< HEAD
     if (keyCode == 13) {
         newString += `<div>`
         newString += `${userName}${' '}`
         newString += `<span>${submit.value}</span>`
         newString += `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString += `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
-=======
-    if (keyCode == 13){
-        newString += `<div class='message'>`
-        newString +=    `${userName}${' '}`
-        newString +=    `<span>${submit.value}</span>`
-        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
-        newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
->>>>>>> master
         newString += `<div>`;
         submit.value = '';
     }
     printToDom(newString);
     deleteMessage();
-    messageLimit();
     editMessage();
 });
 
@@ -102,27 +76,28 @@ const clearBox = () => {
 clearButton.addEventListener('click', clearBox);
 
 
-//modal themes
-// let whut = document.getElementById('themessss');
-// let pageBody = document.getElementById("bodyId");
-// let firstTheme = document.getElementById('themeGreen') ;
+//MODAL THEMES
+const lilGreenTheme = () => {
+    const greenThemeBox = document.getElementById('themeGreen');
+    greenThemeBox.addEventListener('click', () => {
+        if (greenThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme1');
+        }
+    })
+}
+lilGreenTheme();
+
+const lilPurpsTheme = () => {
+    const purpleThemeBox = document.getElementById('themePurps');
+    purpleThemeBox.addEventListener('click', () => {
+        if (purpleThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme2')
+        }
+    })
+}
 
 
 
-
-// const chooseTheme = () => {
-//     const greenCheckBox = document.getElementById('themeGreen');
-//     greenCheckBox.addEventListener('click', (e) => {
-//         if (greenCheckBox.checked) {
-//             bodyId.style.backgroundColor = "green";
-//             bodyId.style.color = "white";
-//         } else {
-//             bodyId.style.backgroundColor = "white";
-//             bodyId.style.color = "black";
-//         }
-//     })
-// };
-// chooseTheme();
 
 // EDIT BUTTON 
 
@@ -142,13 +117,4 @@ const editMessage = () => {
 
 export { editMessage }
 
-const chooseTheme = () => {
-    const greenThemeBox = document.getElementById('themeGreen');
-    greenThemeBox.addEventListener('click', () => {
-        if (greenThemeBox.checked) {
-            console.log('break?');
-            document.getElementById('bodyId').classList.add('theme1');
-        }
-    })
-}
-chooseTheme();
+
