@@ -1,6 +1,6 @@
 import { printToDom } from "../helpers/util.js";
+import {deleteMessage} from './messages.js';
 import {rightNow} from './moment.js';
-import {deleteMessage, messageLimit} from './messages.js';
 
 // Dark Theme Function 
 const darkTheme = () => {
@@ -17,25 +17,26 @@ const darkTheme = () => {
 };
 darkTheme();
 
-
-let userName = "";
-const users = () => {
-    let userRadios =  document.getElementsByClassName("users");
-    for (let i = 0; i<userRadios.length; i++) {
-        userRadios[i].onclick = function() {
-            userName = userRadios[i].value;
-            return userName;
-            } 
+    let userName = "";
+    const users = () => {
+        let userRadios =  document.getElementsByClassName("users");
+        console.log(userRadios)
+        for (let i = 0; i<userRadios.length; i++) {
+            userRadios[i].onclick = function() {
+                userName = userRadios[i].value;
+                console.log(userName)
+                return userName;
+                            } 
+            }
         }
-    }
-users();
+        users();
 
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString += `<div class='message'>`
+        newString += `<div>`
         newString +=    `${userName}${' '}`
         newString +=    `<span>${submit.value}</span>`
         newString +=    `<span><font size="1">  ${rightNow()}</font></span>`
@@ -47,18 +48,17 @@ window.addEventListener('keypress', function (e) {
     printToDom(newString);
     deleteMessage();
     editMessage();
-    clearFix();
 });
 
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
     makeTextLarge.addEventListener('click', () => {
-        if (makeTextLarge.checked) {
-            messageArea.style.fontSize = "2.0em";
-        }
-        else {
-            messageArea.style.fontSize = "1.0em";
-        }
+    if(makeTextLarge.checked){
+        messageArea.style.fontSize = "2.0em";  
+    }
+    else{
+        messageArea.style.fontSize = "1.0em";
+    }
     })
 };
 largeText();
@@ -68,60 +68,16 @@ largeText();
 const clearBox = () => {
     let clearButton = document.getElementById('clearButton');
     document.getElementById('messageArea').innerHTML = '';
-    clearButton.disabled = true;
 }
-const clearFix = () => {
-    clearButton.disabled = false;
-}
+
 clearButton.addEventListener('click', clearBox);
-
-
-//MODAL THEMES
-const lilGreenTheme = () => {
-    const greenThemeBox = document.getElementById('themeGreen');
-    greenThemeBox.addEventListener('click', () => {
-        if (greenThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme1');
-            document.getElementById('bodyId').classList.add('themeBackgroundSpider');
-        } else {
-            document.getElementById('bodyId').classList.remove('theme1');
-        }
-    })
-}
-lilGreenTheme();
-
-const lilPurpsTheme = () => {
-    const purpleThemeBox = document.getElementById('themePurps');
-    purpleThemeBox.addEventListener('click', () => {
-        if (purpleThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme2');
-            document.getElementById('bodyId').classList.add('themeBackgroundFish');
-        } else {
-            document.getElementById('bodyId').classList.remove('theme2');
-        }
-    })
-}
-lilPurpsTheme();
-
-const lilSpaceTheme = () => {
-    const spaceThemeBox = document.getElementById('themeBlack');
-    spaceThemeBox.addEventListener('click', () => {
-        if (spaceThemeBox.checked) {
-            document.getElementById('bodyId').classList.add('theme3');
-            document.getElementById('bodyId').classList.add('themeBackgroundSpace');
-        } else {
-            document.getElementById('bodyId').classList.remove('theme3');
-        }
-    })
-}
-lilSpaceTheme();
 
 // EDIT BUTTON 
 
 const editMessage = () => {
     const editButtons = document.getElementsByClassName('editMessages');
     for (let i = 0; i < editButtons.length; i++) {
-        const editer = editButtons[i];
+        const editer = editButtons[i]; 
         editer.addEventListener('click', (e) => {
             const messageIClicked = e.target;
             const toDelete = messageIClicked.parentNode;
@@ -132,5 +88,5 @@ const editMessage = () => {
     }
 }
 
-export {editMessage, clearFix}
+export {editMessage}
 
