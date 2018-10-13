@@ -17,7 +17,7 @@ const messageBuilder = () => {
         newString += `<div class="message">`
         newString +=    `${messages[i].user}: `
         newString +=    `<span>${messages[i].message}</span> `
-        newString +=    `${messages[i].timestamp} `
+        newString +=    `<font size="1">${messages[i].timestamp}</font> `
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `</div>`
