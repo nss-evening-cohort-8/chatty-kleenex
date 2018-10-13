@@ -57,20 +57,18 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <form name="radioForm">
             <div class="modal-body">
-                    <label class="container">Theme 1
-                        <input type="checkbox" name="spidey" id="themeGreen">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Theme 2
-                        <input type="checkbox" name="goldFishey" id="themePurps">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Theme 3
-                        <input type="checkbox" name="spacey" id="themeBlack">
-                        <span class="checkmark"></span>
-                    </label>
+                        <input type="radio" name="boop" id="themeGreen"> 
+                        <label for="theme1choice">Spider-Man</label>
+
+                        <input type="radio" name="boop" id="themePurps">
+                        <label for="theme2choice">Goldfishy</label>
+
+                        <input type="radio" name="boop" id="themeBlack"> 
+                        <label for="theme3choice">Space</label>
             </div>
+        </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>

@@ -1,5 +1,5 @@
 import { printToDom } from "../helpers/util.js";
-import {deleteMessage} from './messages.js';
+import {deleteMessage, messageLimit} from './messages.js';
 import {rightNow} from './moment.js';
 
 // Dark Theme Function 
@@ -85,6 +85,8 @@ const lilGreenTheme = () => {
         if (greenThemeBox.checked) {
             document.getElementById('bodyId').classList.add('theme1');
             document.getElementById('bodyId').classList.add('themeBackgroundSpider');
+            document.getElementById('bodyId').classList.remove('themeBackgroundFish');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
         } else {
             document.getElementById('bodyId').classList.remove('theme1');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
@@ -99,12 +101,15 @@ const lilPurpsTheme = () => {
         if (purpleThemeBox.checked) {
             document.getElementById('bodyId').classList.add('theme2');
             document.getElementById('bodyId').classList.add('themeBackgroundFish');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
         } else {
             document.getElementById('bodyId').classList.remove('theme2');
             document.getElementById('bodyId').classList.remove('themeBackgroundFish');
         }
     })
 }
+lilPurpsTheme();
 
 const lilSpaceTheme = () => {
     const spaceThemeBox = document.getElementById('themeBlack');
@@ -112,6 +117,8 @@ const lilSpaceTheme = () => {
         if (spaceThemeBox.checked) {
             document.getElementById('bodyId').classList.add('theme3');
             document.getElementById('bodyId').classList.add('themeBackgroundSpace');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
+            document.getElementById('bodyId').classList.remove('themeBackgroundFish');
         } else {
             document.getElementById('bodyId').classList.remove('theme3');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
@@ -120,9 +127,6 @@ const lilSpaceTheme = () => {
 }
 lilSpaceTheme();
 
-const uncheckBoxes = (obj) => {
-
-}
 
 // EDIT BUTTON 
 
@@ -140,5 +144,5 @@ const editMessage = () => {
     }
 }
 
-export {editMessage}
+export {editMessage, clearFix}
 
