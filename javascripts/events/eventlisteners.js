@@ -1,6 +1,6 @@
 import { printToDom } from "../helpers/util.js";
-import {deleteMessage} from './messages.js';
 import {setTimestamp} from './moment.js';
+import {deleteMessage, messageLimit} from './messages.js';
 
 // Dark Theme Function 
 const darkTheme = () => {
@@ -17,26 +17,25 @@ const darkTheme = () => {
 };
 darkTheme();
 
-    let userName = "";
-    const users = () => {
-        let userRadios =  document.getElementsByClassName("users");
-        console.log(userRadios)
-        for (let i = 0; i<userRadios.length; i++) {
-            userRadios[i].onclick = function() {
-                userName = userRadios[i].value;
-                console.log(userName)
-                return userName;
-                            } 
-            }
+
+let userName = "";
+const users = () => {
+    let userRadios =  document.getElementsByClassName("users");
+    for (let i = 0; i<userRadios.length; i++) {
+        userRadios[i].onclick = function() {
+            userName = userRadios[i].value;
+            return userName;
+            } 
         }
-        users();
+    }
+users();
 
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString += `<div>`
+        newString += `<div class='message'>`
         newString +=    `${userName}${' '}`
         newString +=    `<span>${submit.value}</span>`
         newString +=    `<span><font size="1">  ${setTimestamp}</font></span>`
@@ -47,7 +46,9 @@ window.addEventListener('keypress', function (e) {
     }
     printToDom(newString);
     deleteMessage();
+    messageLimit();
     editMessage();
+    clearFix();
 });
 
 const largeText = () => {
@@ -68,8 +69,11 @@ largeText();
 const clearBox = () => {
     let clearButton = document.getElementById('clearButton');
     document.getElementById('messageArea').innerHTML = '';
+    clearButton.disabled = true;
 }
-
+const clearFix = () => {
+    clearButton.disabled = false;
+}
 clearButton.addEventListener('click', clearBox);
 
 // EDIT BUTTON 
@@ -88,5 +92,5 @@ const editMessage = () => {
     }
 }
 
-export {editMessage}
+export {editMessage, clearFix}
 
