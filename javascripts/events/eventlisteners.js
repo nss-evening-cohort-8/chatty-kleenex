@@ -48,8 +48,6 @@ window.addEventListener('keypress', function (e) {
     deleteMessage();
 });
 
-
-
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
     makeTextLarge.addEventListener('click', () => {
