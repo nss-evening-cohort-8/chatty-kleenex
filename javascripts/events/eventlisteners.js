@@ -48,6 +48,8 @@ window.addEventListener('keypress', function (e) {
     printToDom(newString);
     deleteMessage();
     editMessage();
+    messageLimit();
+    clearFix();
 });
 
 const largeText = () => {
@@ -68,9 +70,55 @@ largeText();
 const clearBox = () => {
     let clearButton = document.getElementById('clearButton');
     document.getElementById('messageArea').innerHTML = '';
+    clearButton.disabled = true;
+}
+const clearFix = () => {
+    clearButton.disabled = false;
+}
+clearButton.addEventListener('click', clearBox);
+
+
+//MODAL THEMES
+const lilGreenTheme = () => {
+    const greenThemeBox = document.getElementById('themeGreen');
+    greenThemeBox.addEventListener('click', () => {
+        if (greenThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme1');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpider');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme1');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
+        }
+    })
+}
+lilGreenTheme();
+
+const lilPurpsTheme = () => {
+    const purpleThemeBox = document.getElementById('themePurps');
+    purpleThemeBox.addEventListener('click', () => {
+        if (purpleThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme2');
+            document.getElementById('bodyId').classList.add('themeBackgroundFish');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme2');
+            document.getElementById('bodyId').classList.remove('themeBackgroundFish');
+        }
+    })
 }
 
-clearButton.addEventListener('click', clearBox);
+const lilSpaceTheme = () => {
+    const spaceThemeBox = document.getElementById('themeBlack');
+    spaceThemeBox.addEventListener('click', () => {
+        if (spaceThemeBox.checked) {
+            document.getElementById('bodyId').classList.add('theme3');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpace');
+        } else {
+            document.getElementById('bodyId').classList.remove('theme3');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpace');
+        }
+    })
+}
+lilSpaceTheme();
 
 // EDIT BUTTON 
 
