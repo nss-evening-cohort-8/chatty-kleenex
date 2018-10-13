@@ -85,6 +85,7 @@ const lilGreenTheme = () => {
             document.getElementById('bodyId').classList.add('themeBackgroundSpider');
         } else {
             document.getElementById('bodyId').classList.remove('theme1');
+            document.getElementById('bodyId').classList.remove('themeBackgroundSpider');
         }
     })
 }
@@ -98,6 +99,7 @@ const lilPurpsTheme = () => {
             document.getElementById('bodyId').classList.add('themeBackgroundFish');
         } else {
             document.getElementById('bodyId').classList.remove('theme2');
+            document.getElementById('bodyId').classList.remove('themeBackgroundFish');
         }
     })
 }
@@ -111,6 +113,7 @@ const lilSpaceTheme = () => {
             document.getElementById('bodyId').classList.add('themeBackgroundSpace');
         } else {
             document.getElementById('bodyId').classList.remove('theme3');
+            document.getElementById('bodyId').classList.add('themeBackgroundSpace');
         }
     })
 }
