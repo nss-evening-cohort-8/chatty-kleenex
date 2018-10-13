@@ -31,46 +31,24 @@ darkTheme();
         }
         users();
 
-
-let inputvalues = [];
-console.log(inputvalues);
-const messageArray = () => {
-
 const submit = document.getElementById('textInput');
 window.addEventListener('keypress', function (e) {
-    let newString = "";
     const keyCode = e.which;
+    let newString = "";
     if (keyCode == 13){
-        inputvalues.push(submit.value);
-        submit.value ='';
-        for (let i=0; i<inputvalues.length; i++){        
         newString += `<div>`
         newString +=    `${userName}${' '}`
-        newString +=    `${i}${inputvalues[i]}`
+        newString +=    `${submit.value}`
         newString +=    `<button type="button" class="btn btn-primary m-2" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
-        }
+        submit.value = '';
     }
     printToDom(newString);
-  deleteMessage();
+    deleteMessage();
 });
 
-}
-messageArray();
 
-// const submit = document.getElementById('textInput');
-// window.addEventListener('keypress', function (e) {
-//     var keyCode = e.which;
-//     let inputvalues = [];
-//     if (keyCode == 13){
-//         inputvalues.push(submit.value);
-//     }
-// for (i=0; i<inputvalues.length; i++){
-//     console.log(inputvalues[0]);
-// }
-//     // printToDom(inputvalues);
-// });
 
 const largeText = () => {
     const makeTextLarge = document.getElementById("largeText");
