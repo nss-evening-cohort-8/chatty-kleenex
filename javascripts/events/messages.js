@@ -2,7 +2,6 @@ import {printToDom} from '../helpers/util.js'
 import {editMessage} from './eventlisteners.js'
 
 let messages = [];
-let counter = 0;
 
 const setMessages = (newArray) => {
     messages = newArray;
@@ -15,7 +14,7 @@ const getMessagez = () => {
 const messageBuilder = () => {
     let newString = '';
     for (let i = 0; i < messages.length; i++) {
-        newString += `<div>`
+        newString += `<div class="message">`
         newString +=    `${messages[i].user}: `
         newString +=    `<span>${messages[i].message}</span> `
         newString +=    `${messages[i].timestamp} `
@@ -25,7 +24,6 @@ const messageBuilder = () => {
 
     }
     printToDom(newString, 'messageArea')
-    counter++;
     editMessage();
     deleteMessage();
 };
@@ -44,5 +42,13 @@ const deleteMessage = () => {
     } 
 }
 
+const messageLimit = () => {
+    const allMessages = document.getElementsByClassName('message')    
+    if (allMessages.length > [20]) {
+        const first = allMessages.item([0]);
+        first.remove();
+    };
+}
 
-export {messageBuilder, messages, setMessages, getMessagez, deleteMessage}
+
+export {messageBuilder, messages, setMessages, getMessagez, deleteMessage, messageLimit}

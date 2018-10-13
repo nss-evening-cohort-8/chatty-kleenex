@@ -1,5 +1,5 @@
 import { printToDom } from "../helpers/util.js";
-import {deleteMessage} from './messages.js';
+import {deleteMessage, messageLimit} from './messages.js';
 
 
 // Dark Theme Function 
@@ -20,11 +20,9 @@ darkTheme();
     let userName = "";
     const users = () => {
         let userRadios =  document.getElementsByClassName("users");
-        console.log(userRadios)
         for (let i = 0; i<userRadios.length; i++) {
             userRadios[i].onclick = function() {
                 userName = userRadios[i].value;
-                console.log(userName)
                 return userName;
                             } 
             }
@@ -36,7 +34,7 @@ window.addEventListener('keypress', function (e) {
     const keyCode = e.which;
     let newString = "";
     if (keyCode == 13){
-        newString += `<div>`
+        newString += `<div class='message'>`
         newString +=    `${userName}${' '}`
         newString +=    `<span>${submit.value}</span>`
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
@@ -46,6 +44,7 @@ window.addEventListener('keypress', function (e) {
     }
     printToDom(newString);
     deleteMessage();
+    messageLimit();
     editMessage();
 });
 
