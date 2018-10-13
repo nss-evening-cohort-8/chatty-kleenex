@@ -1,6 +1,6 @@
 import { printToDom } from "../helpers/util.js";
 import {deleteMessage} from './messages.js';
-import {setTimestamp} from './moment.js';
+import {rightNow} from './moment.js';
 
 // Dark Theme Function 
 const darkTheme = () => {
@@ -39,7 +39,7 @@ window.addEventListener('keypress', function (e) {
         newString += `<div>`
         newString +=    `${userName}${' '}`
         newString +=    `<span>${submit.value}</span>`
-        newString +=    `<span><font size="1">  ${setTimestamp}</font></span>`
+        newString +=    `<span><font size="1">  ${rightNow()}</font></span>`
         newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `<div>`;
