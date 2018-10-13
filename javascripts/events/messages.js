@@ -1,5 +1,5 @@
 import {printToDom} from '../helpers/util.js'
-import {editMessage} from './eventlisteners.js'
+import {editMessage, clearFix} from './eventlisteners.js'
 
 let messages = [];
 
@@ -26,10 +26,18 @@ const messageBuilder = () => {
     printToDom(newString, 'messageArea')
     editMessage();
     deleteMessage();
+    clearFix();
 };
 
 // DELETE BUTTON
 
+const deleteClear = () => {
+    const messageZone = document.getElementsByClassName('message');
+        if (messageZone.length <= [0]){
+            clearButton.disabled = true;
+        }
+}
+// deleteClear disables the clear button when the last message is deleted
 const deleteMessage = () => {
     const deleteButtons = document.getElementsByClassName('deleteMessages');
     for (let i = 0; i < deleteButtons.length; i++) {
@@ -38,12 +46,15 @@ const deleteMessage = () => {
             const buttonIClicked = e.target;
             const messageToDelete = buttonIClicked.parentNode;
             messageToDelete.remove();
+            deleteClear();
         })
-    } 
+    }
 }
 
+// Limits the messages in the chatbox to 20
+
 const messageLimit = () => {
-    const allMessages = document.getElementsByClassName('message')    
+    const allMessages = document.getElementsByClassName('message');  
     if (allMessages.length > [20]) {
         const first = allMessages.item([0]);
         first.remove();
