@@ -1,4 +1,4 @@
-# Chatty Kleenex Project
+# Chatty Kleenex Group Project
 
 ## Technologies Used:
 
@@ -8,12 +8,22 @@
     * Bootstrap 4 
     * ES6 Modules 
 
+
 ## Description 
 
-Our group created a chat application. The project features a  
+Our group created a chat application. The project features a navigation bar, which has an input area and two buttons. One button is to clear the messages and the other button offers three different background theme choices. 
+
+Below the navigation bar we have options to change the messages background color theme, text color and text size. Additionally, you can choose a username to display before your messages throughout your conversation.
+
+The chat application deletes the top message after 20 messages have been reached. Lastly, as the bonus, the user receives an alert when the type a "bad word". 
+
 
 ## Screenshots
-![Screenshot Image](sorting.png)
+![Home Page Screenshot Image](/images/KleenexHomePage.png)
+![Spider-Man Theme Screenshot Image](/images/KleenexSpideyPage.png)
+![Goldfishy Theme Screenshot Image](/images/KleenexGoldfishyPage.png)
+![Space Theme Screenshot Image](/images/KleenexSpacePage.png)
+
 
 ## Contributors
 
