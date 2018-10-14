@@ -110,6 +110,7 @@ const lilGreenTheme = () => {
     const greenThemeBox = document.getElementById('themeGreen');
     greenThemeBox.addEventListener('click', () => {
         if (greenThemeBox.checked) {
+            document.getElementById('logo').classList.add('chattyOne')
             document.getElementById('bodyId').classList.add('themeBackgroundSpider');
             document.getElementById('bodyId').classList.remove('themeBackgroundFish');
             document.getElementById('bodyId').classList.remove('themeBackgroundSpace');

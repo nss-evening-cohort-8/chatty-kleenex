@@ -1,5 +1,7 @@
 body{
-    background-color: lightskyblue;
+    background-image: url(./images/Apple.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #messageArea {
@@ -27,10 +29,3 @@ body{
 .themeBackgroundSpider {
     background-image: url(./images/Spidey.jpg);
 }
-
-/* #logo {
-    display: flex;
-    margin-top: 14%;
-    margin-left: 14%;
-
-} */
