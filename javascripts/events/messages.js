@@ -9,7 +9,7 @@ const setMessages = (newArray) => {
 
 const getMessagez = () => {
     return messages;
-}
+};
 
 const messageBuilder = () => {
     let newString = '';
@@ -18,8 +18,8 @@ const messageBuilder = () => {
         newString +=    `${messages[i].user}: `
         newString +=    `<span>${messages[i].message}</span> `
         newString +=    `<font size="1">${messages[i].timestamp}</font> `
-        newString +=    `<button type="button" class="btn btn-primary m-2 editMessages" id="editButton">Edit</button>`
-        newString +=    `<button type="button" class="btn btn-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
+        newString +=    `<button type="button" class="btn btn-outline-primary m-2 editMessages" id="editButton">Edit</button>`
+        newString +=    `<button type="button" class="btn btn-outline-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
         newString += `</div>`
 
     }
@@ -36,7 +36,8 @@ const deleteClear = () => {
         if (messageZone.length <= [0]){
             clearButton.disabled = true;
         }
-}
+};
+
 // deleteClear disables the clear button when the last message is deleted
 const deleteMessage = () => {
     const deleteButtons = document.getElementsByClassName('deleteMessages');
@@ -49,18 +50,16 @@ const deleteMessage = () => {
             deleteClear();
         })
     }
-}
+};
 
 // Limits the messages in the chatbox to 20
-
 const messageLimit = () => {
     const allMessages = document.getElementsByClassName('message');  
     if (allMessages.length > [20]) {
         const first = allMessages.item([0]);
         first.remove();
-    };
-}
+    }
+};
 
-console.log('hello world');
 
 export {messageBuilder, messages, setMessages, getMessagez, deleteMessage, messageLimit}
