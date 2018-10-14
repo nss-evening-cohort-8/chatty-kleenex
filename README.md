@@ -15,7 +15,7 @@ Our group created a chat application. The project features a navigation bar, whi
 
 Below the navigation bar we have options to change the messages background color theme, text color and text size. Additionally, you can choose a username to display before your messages throughout your conversation.
 
-The chat application deletes the top message after 20 messages have been reached. Lastly, as the bonus, the user receives an alert when the type a "bad word". 
+The chat application deletes the top message after 20 messages have been reached. Lastly, as the bonus, the user receives an alert when they type a "bad word". 
 
 
 ## Screenshots
