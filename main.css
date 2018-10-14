@@ -1,10 +1,14 @@
 body{
-    background-color: lightskyblue;
-    
+    background-image: url(./images/Apple.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: 'Archivo Narrow', sans-serif;
 }
 
 #messageArea {
+    margin-top: 0;
     border: black solid 3px;
+    border-radius: 2%;
     margin: 10%;
     padding: 10%;
     background-color: white;
@@ -18,13 +22,33 @@ body{
 }
 
 .themeBackgroundSpace {
-    background-image: url(./images/Galaxy.jpg);
-}
+    background-image: url(./images/ColorfulNebula.jpg);
+    background-size: cover;
+    font-weight: bolder;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 19px;
+ }
+
 
 .themeBackgroundFish {
     background-image: url(./images/Goldfish.jpg);
+    background-size: cover;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 19px;
+    font-weight: bolder;
 }
 
 .themeBackgroundSpider {
-    background-image: url(./images/Spidey.jpg);
+    background-image: url(./images/Spider.jpg);
+    background-size: cover;
+    font-family: 'Bree Serif', serif;
+}
+
+.btn.outline {
+    background: none;
+} 
+
+.editMessages, .deleteMessages {
+    color: #1e88e5;
+    border: #1e88e5 1px solid;
 }
