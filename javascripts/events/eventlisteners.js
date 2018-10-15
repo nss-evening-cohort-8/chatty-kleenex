@@ -35,6 +35,7 @@ let userName = "";
         userRadios[i].onclick = function() {
         userName = userRadios[i].value;
         return userName;
+            
         } 
     }
 };
@@ -48,7 +49,19 @@ window.addEventListener('keypress', function (e) {
     if (keyCode == 13){
         newString += `<div class='message'>`
         newString +=    `${userName}${' '}`
-        newString +=    `<span>${submit.value}</span>`
+        switch(userName){
+        case "Feven:": newString +=    `<span class="text-primary">${submit.value}</span>`
+        break;
+        case "Chase:": newString +=    `<span class="text-success">${submit.value}</span>`
+        break;
+        case "Colin:": newString +=    `<span class="text-danger">${submit.value}</span>`
+        break;
+        case "Tim:":   newString +=    `<span class="text-warning">${submit.value}</span>`
+        break;
+        case "Michelle:": newString +=    `<span class="text-info">${submit.value}</span>`
+        break;
+        default: newString+= `<h4>You need to Register to use this chat App!!! &#9785;</h4>`;
+                    }
         newString +=    `<span><font size="1">  ${rightNow()}</font></span>`
         newString +=    `<button type="button" class="btn btn-outline-primary m-2 editMessages" id="editButton">Edit</button>`
         newString +=    `<button type="button" class="btn btn-outline-primary m-2 deleteMessages" id="deleteButton">Delete</button>`
@@ -68,11 +81,10 @@ userMessage();
 // BAD WORDS
 const badWords = () => {
 const message = submit.value;
-console.log(message);
 for (let i = 0; i < words.length; i++) {
     if(message.includes(words[i])){
-        const alertWord = words[i];
-        alert("You typed " + alertWord + " so you are rewarded with a prize");
+        let alertWord = words[i];
+        alert("Congrats! You typed " + alertWord + " and you are rewarded with a prize");
         }
     }
 };
