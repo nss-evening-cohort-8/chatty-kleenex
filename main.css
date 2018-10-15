@@ -29,7 +29,6 @@ body{
     font-size: 19px;
  }
 
-
 .themeBackgroundFish {
     background-image: url(./images/Goldfish.jpg);
     background-size: cover;
@@ -44,11 +43,23 @@ body{
     font-family: 'Bree Serif', serif;
 }
 
-.btn.outline {
-    background: none;
-} 
-
 .editMessages, .deleteMessages {
     color: #1e88e5;
     border: #1e88e5 1px solid;
+}
+
+.fixdis {
+    margin-top: 60px;
+}
+
+#clearButton, #themeButton {
+    border: black 1px solid;
+}
+
+.fontChange {
+    color: darkblue;
+}
+
+.fontChange2 {
+    color: black;
 }
