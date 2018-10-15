@@ -163,6 +163,31 @@ const defaultTheme = () => {
 };
 defaultTheme();
 
+const fontColorTheme = () => {
+    const changeColorTheme = document.getElementById('fontColor');
+    changeColorTheme.addEventListener('click', () => {
+        if (changeColorTheme.checked) {
+            document.getElementById('bodyId').classList.add('fontChange');
+        } else {
+            document.getElementById('bodyId').classList.remove('fontChange');
+        }
+    })
+};
+fontColorTheme();
+
+const fontColorTheme2 = () => {
+    const changeColorTheme2 = document.getElementById('fontColor2');
+    changeColorTheme2.addEventListener('click', () => {
+        if (changeColorTheme2.checked) {
+            document.getElementById('bodyId').classList.add('fontChange2');
+        } else {
+            document.getElementById('bodyId').classList.remove('fontChange2');
+        }
+    })
+};
+fontColorTheme2(); 
+
+
 // EDIT BUTTON 
 
 const editMessage = () => {
