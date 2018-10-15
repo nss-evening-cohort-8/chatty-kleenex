@@ -33,8 +33,9 @@ let userName = "";
     let userRadios =  document.getElementsByClassName("users");
     for (let i = 0; i<userRadios.length; i++) {
         userRadios[i].onclick = function() {
-        userName = userRadios[i].value;
+        userName = userRadios[i].value.fontcolor("green");
         return userName;
+            
         } 
     }
 };
@@ -72,7 +73,7 @@ console.log(message);
 for (let i = 0; i < words.length; i++) {
     if(message.includes(words[i])){
         const alertWord = words[i];
-        alert("You typed " + alertWord + " so you are rewarded with a prize");
+        alert("Congrats! You typed " + alertWord + " and you are rewarded with a prize");
         }
     }
 };

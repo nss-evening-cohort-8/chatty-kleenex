@@ -15,7 +15,7 @@ const messageBuilder = () => {
     let newString = '';
     for (let i = 0; i < messages.length; i++) {
         newString += `<div class="message">`
-        newString +=    `${messages[i].user}: `
+        newString +=    `${messages[i].user.fontcolor("green")}: `
         newString +=    `<span>${messages[i].message}</span> `
         newString +=    `<font size="1">${messages[i].timestamp}</font> `
         newString +=    `<button type="button" class="btn btn-outline-primary m-2 editMessages" id="editButton">Edit</button>`
