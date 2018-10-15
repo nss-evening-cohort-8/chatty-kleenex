@@ -60,7 +60,7 @@ window.addEventListener('keypress', function (e) {
         break;
         case "Michelle:": newString +=    `<span class="text-info">${submit.value}</span>`
         break;
-        default: newString+= "You need to Register to use this chat App";
+        default: newString+= `<h4>You need to Register to use this chat App!!! &#9785;</h4>`;
                     }
         newString +=    `<span><font size="1">  ${rightNow()}</font></span>`
         newString +=    `<button type="button" class="btn btn-outline-primary m-2 editMessages" id="editButton">Edit</button>`
